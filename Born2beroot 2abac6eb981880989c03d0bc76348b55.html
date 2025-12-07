@@ -1,0 +1,859 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Born2beroot</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2abac6eb-9818-8098-9c03-d0bc76348b55" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Born2beroot/Donkey_Kong_Gallery.gif"/></div><h1 class="page-title" dir="auto">Born2beroot</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h2 id="2b5ac6eb-9818-8013-8664-cfad42065cd0" class="block-color-blue_background">virtualization and Hypervisor </h2></div><div style="display:contents" dir="auto"><div id="2b8ac6eb-9818-806f-97ab-f355a86e76ed" class="column-list"><div style="display:contents" dir="auto"><div id="2b8ac6eb-9818-8050-b852-dabe627e832f" style="width:50%" class="column"><div style="display:contents" dir="auto"><h3 id="2b6ac6eb-9818-8077-bb02-e6014eb49306" class="block-color-purple_background">What is virtualization?</h3></div><div style="display:contents" dir="auto"><p id="2b8ac6eb-9818-80b2-96f7-ee45aea89746" class="">Virtualization is the process of creating virtual machines (gust operating system) in physical machine (host), use hypervisor (program or firmware) to allocate hardware resources-such Memory, cpu, Storage, Network to can operation systems shear this resources.</p></div><div style="display:contents" dir="auto"><h3 id="2b8ac6eb-9818-802e-9f3d-f260f1ab75e8" class="block-color-purple_background">What is type hypervisor?</h3></div><div style="display:contents" dir="auto"><p id="2b8ac6eb-9818-8011-976a-eafdf39a9881" class="">They are two main type:</p></div><div style="display:contents" dir="auto"><ul id="2b8ac6eb-9818-8046-a3d3-ce8876cd1941" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Bare-matel (type 1):</mark></summary><div style="display:contents" dir="auto"><p id="2b8ac6eb-9818-80b3-823f-f4aae98b3862" class="">In this type we have hypervisor in hardware without any OS layer between them so it can access directory to resources.</p></div><div style="display:contents" dir="ltr"><figure id="2b8ac6eb-9818-80d1-8d23-f649de2a6934" class="image"><a href="Born2beroot/Screen_Shot_2025-11-27_at_10.32.40_AM.png"><img style="width:869.4921875px" src="Born2beroot/Screen_Shot_2025-11-27_at_10.32.40_AM.png"/></a></figure></div></details></li></ul></div><div style="display:contents" dir="auto"><ul id="2b8ac6eb-9818-802f-8bfb-ee86dc827f38" class="toggle"><li><details open=""><summary><mark class="highlight-blue">Hosted (type 2):</mark></summary><div style="display:contents" dir="auto"><p id="2b8ac6eb-9818-8065-99c9-eb865fd2ff37" class="">In this type we have hypervisor in OS so we have OS layer between hardware and hypervisor.</p></div><div style="display:contents" dir="ltr"><figure id="2b8ac6eb-9818-8001-8d53-f119b01a67fc" class="image"><a href="Born2beroot/Screen_Shot_2025-11-27_at_10.12.43_AM.png"><img style="width:869.4921875px" src="Born2beroot/Screen_Shot_2025-11-27_at_10.12.43_AM.png"/></a></figure></div></details></li></ul></div></div></div><div style="display:contents" dir="auto"><div id="2b8ac6eb-9818-809c-b188-d984aabe6b70" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2b8ac6eb-9818-803b-b717-f702bca8acaf" class="image"><a href="Born2beroot/Screen_Shot_2025-11-27_at_10.04.17_AM.png"><img style="width:897.484375px" src="Born2beroot/Screen_Shot_2025-11-27_at_10.04.17_AM.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="2b8ac6eb-9818-800a-9fbe-d3925f4261a6" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="auto"><h2 id="c21be031-825f-403b-90ce-47dbd5177fa7" class="block-color-blue_background">What is KDump</h2></div><div style="display:contents" dir="auto"><div id="603c1e47-0c29-49b5-b8f5-3e62b15c5f0c" class="column-list"><div style="display:contents" dir="auto"><div id="a5b80e2f-beb4-4312-8262-ffe420be9670" style="width:100%" class="column"><div style="display:contents" dir="auto"><p id="1bfa3f06-8053-4ec6-982a-66d9a51b5388" class="">It&#x27;s a kernel feature for Linux system administrators that captures kernel crashes and saves the contents of the crashed kernel memory in a file called Core Dump (aka vmcore). It then calls <a href="https://events.static.linuxfound.org/sites/events/files/slides/kdump_usage_and_internals.pdf">Kexec</a> (a system call) to use a secondary kernel without a full reboot.</p></div><div style="display:contents" dir="auto"><p id="e80f6db9-b53b-42e1-a0c9-d38bcea0a3cf" class="">Core Dump --&gt; kernel memory image of an app crash</p></div><div style="display:contents" dir="auto"><p id="2041e500-5d6e-4ab8-a099-74657dee7e27" class="">Crash Dump --&gt; kernel memory image of OS crash</p></div><div style="display:contents" dir="auto"><p id="36ebe2d0-58a3-4613-be1c-8ccdf7a1d103" class="">
+</p></div><div style="display:contents" dir="auto"><p id="c9021fa4-fa77-4a00-9d34-92986b521583" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="a25206cf-ab27-470a-9331-90b07da915d7" style="width:37.5%" class="column"><div style="display:contents" dir="ltr"><figure id="2abac6eb-9818-806c-ae57-ff1548ee75f9" class="image"><a href="Born2beroot/Screen_Shot_2025-11-14_at_9.37.28_AM.png"><img style="width:384px" src="Born2beroot/Screen_Shot_2025-11-14_at_9.37.28_AM.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><h2 id="2b9ac6eb-9818-801c-bf10-fd6c01ee9c2e" class="block-color-blue_background">What is AppArmor(for Debian)?</h2></div><div style="display:contents" dir="auto"><p id="2b2ac6eb-9818-80eb-9902-dc6b28d70ef7" class="">It’s linux application security system that protects system from programs by define profile to it</p></div><div style="display:contents" dir="auto"><h2 id="db726887-3a8d-4a45-a4ad-7d273af3d2cb" class="block-color-blue_background">What is Apt and Aptitude</h2></div><div style="display:contents" dir="auto"><h2 id="e79084be-eec6-4870-89b1-5bbe1900782b" class="block-color-blue_background">Firmware (BIOS or UEFI)</h2></div><div style="display:contents" dir="auto"><p id="2796c789-15d0-4a57-b001-3593736d13ff" class="">It’s store in chip on the motherboard and it’s program read <strong>partition table </strong>in <code>/dev/sda</code> to find <strong>EFI</strong> partition this partition is a <strong>FAT32</strong> formatted contains boot loader file for your OS in <code>/dev/sda1</code> (usually) and loads <strong>Bootloader </strong>(<code>/EFI/BOOT/bootx64.efi</code>) to the last one can loads Linux kernel than kernel mounts root filesystem from <code>/dev/sda2</code> or <code>/dev/sda3</code> etc.</p></div><div style="display:contents" dir="auto"><div id="2aeac6eb-9818-8011-91e1-e2cb895e1a02" class="column-list"><div style="display:contents" dir="auto"><div id="2aeac6eb-9818-8013-abd5-ca48d75775c9" style="width:68.75%" class="column"><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="bf1241e3-cd88-4796-bc5b-22b9e3156b9a" class="code code-wrap"><code class="language-TypeScript" style="white-space:pre-wrap;word-break:break-all">Firmware (UEFI/BIOS)
+↑  (runs BEFORE disk)
+│
+│   ┌─────────────────────────────┐
+│   │  /dev/sda (whole disk)      │
+│   │  ┌────────────────────────┐ │
+└──→│  │ Partition Table        │ │
+    │  ├────────────────────────┤ │
+    │  │ /dev/sda1 → EFI System │ ← Firmware reads this!
+    │  │ (contains bootloader)  │ │
+    │  ├────────────────────────┤ │
+    │  │ /dev/sda2 → root (/)   │ │
+    │  ├────────────────────────┤ │
+    │  │ /dev/sda3 → swap       │ │
+    │  └────────────────────────┘ │
+    └─────────────────────────────┘</code></pre></div></div></div><div style="display:contents" dir="auto"><div id="2aeac6eb-9818-80e7-8101-e267393bbe3e" style="width:31.25%" class="column"><div style="display:contents" dir="ltr"><figure id="40933870-7c95-4c7d-9043-8aedaac63165" class="image"><a href="https://upload.wikimedia.org/wikipedia/commons/8/81/Grub_logo_large.png"><img style="width:480px" src="https://upload.wikimedia.org/wikipedia/commons/8/81/Grub_logo_large.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="2aeac6eb-9818-8071-8ef5-e3c69f6b6346"/></div><div style="display:contents" dir="auto"><div id="2aeac6eb-9818-80e8-8684-f32fb4c90b04" class="column-list"><div style="display:contents" dir="auto"><div id="2aeac6eb-9818-8018-a0b7-d90706c74280" style="width:50%" class="column"><div style="display:contents" dir="auto"><blockquote id="09d17efa-ced4-415a-88fd-37f7de818db5" class="block-color-orange_background">A partition table is a data structure at the beginning of disk, define information about echo partition in this disk like size, formatted (FAT32, NTFS …etc), where is swap where is EFI partition etc, and this allowed OS locate and manage date efficiently.</blockquote></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2aeac6eb-9818-802a-a490-c6188d21d9f2" class="code code-wrap"><code class="language-TypeScript" style="white-space:pre-wrap;word-break:break-all">Partition Table:
+/dev/sda1 starts at sector 2048 and ends at sector 1050623
+/dev/sda2 starts at sector 1050624 and ends at sector 39063551
+/dev/sda3 starts at sector 39063552 and ends at sector 4294967295</code></pre></div><div style="display:contents" dir="auto"><p id="2aeac6eb-9818-8013-8dce-d1e2319d735c" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="2aeac6eb-9818-8020-8351-fc4bcde0fd1e" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2aeac6eb-9818-80f2-b71e-d36f35943a4b" class="image"><a href="Born2beroot/image.png"><img style="width:615px" src="Born2beroot/image.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="2aeac6eb-9818-8023-b912-c2fd94a166cf"/></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">Difference between BIOS and UEFI:</summary><div class="indented"><div style="display:contents" dir="auto"><h3 id="2aeac6eb-9818-8009-9865-c755af636a67" class="">BIOS (old)</h3></div><div style="display:contents" dir="auto"><ul id="2aeac6eb-9818-800f-abde-fa748c24885f" class="bulleted-list"><li style="list-style-type:disc">Uses <strong>MBR</strong> partition table</li></ul></div><div style="display:contents" dir="auto"><ul id="2aeac6eb-9818-8037-a871-f8487cea82eb" class="bulleted-list"><li style="list-style-type:disc">Bootloader installed into <strong>first 512 bytes of disk</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="2aeac6eb-9818-803b-bd34-d47be0904edf" class="bulleted-list"><li style="list-style-type:disc">Max disk size 2TB</li></ul></div><div style="display:contents" dir="auto"><ul id="2aeac6eb-9818-807b-82bc-e57470183cdc" class="bulleted-list"><li style="list-style-type:disc">Max 4 partitions</li></ul></div><div style="display:contents" dir="auto"><h3 id="2aeac6eb-9818-807c-9f03-fbc42a3d8b1b" class="">UEFI (modern; almost always used)</h3></div><div style="display:contents" dir="auto"><ul id="2aeac6eb-9818-8080-89bf-ecfed079d7d4" class="bulleted-list"><li style="list-style-type:disc">Uses <strong>GPT</strong> partition table</li></ul></div><div style="display:contents" dir="auto"><ul id="2aeac6eb-9818-80e2-bd6f-fbd888a2292b" class="bulleted-list"><li style="list-style-type:disc">Needs an <strong>EFI partition</strong> (FAT32, ~512MB)</li></ul></div><div style="display:contents" dir="auto"><ul id="2aeac6eb-9818-8074-b195-ca1ee2262bcc" class="bulleted-list"><li style="list-style-type:disc">Max disk size 8zb</li></ul></div><div style="display:contents" dir="auto"><ul id="2aeac6eb-9818-808c-88ae-e1c550ea377b" class="bulleted-list"><li style="list-style-type:disc">Max 128 partitions</li></ul></div></div></details></div><div style="display:contents" dir="auto"><blockquote id="2b1ac6eb-9818-80d5-aaf6-d86b8ed965c8" class=""><strong>MBR partitioning scheme</strong> (by default in Virtual-box unless you force GPT)</blockquote></div><div style="display:contents" dir="auto"><h2 id="b4c1cc7f-b588-466e-abb5-1a2b2522980d" class="block-color-blue_background">Filesystem</h2></div><div style="display:contents" dir="auto"><p id="2aeac6eb-9818-80a9-af3e-f282307745d4" class="">What is it? what is type? and where use all it?</p></div><div style="display:contents" dir="auto"><h2 id="ad6f31fc-ab5c-4f71-8ccb-b5965894fb51" class="block-color-blue_background">Different between Type for partition (Primary and Logical and Extended)</h2></div><div style="display:contents" dir="auto"><p id="7b72a635-dc79-4e2c-b1cf-99091e53d0dc" class="">◦ <mark class="highlight-blue">Primary</mark>: The only partition type on which can have boot file (on BIOS). A hard drive can have up to 4 primary partitions (on MBR formatted disk) , or 3 primary partitions and 1 extended partition.</p></div><div style="display:contents" dir="auto"><p id="0360df50-8222-445a-9fcb-cebe3f5b26f9" class="">◦ <mark class="highlight-blue">Extended</mark>: Acts as a container for multiple logical partition allowing disk have more than four partition in total, it’s cannot directly storage data.</p></div><div style="display:contents" dir="auto"><p id="0fdddffa-f239-47a3-a111-5c7101ef0053" class="">◦ <mark class="highlight-blue">Logical</mark>: In this partition we use LVM</p></div><div style="display:contents" dir="auto"><hr id="2b2ac6eb-9818-8047-b4f4-c33c9665d447"/></div><div style="display:contents" dir="auto"><blockquote id="2aeac6eb-9818-804f-bc38-df24b5543243" class="block-color-yellow_background"><strong>sda1–sda4</strong> = reserved for primary partitions<div style="display:contents" dir="auto"><p id="2aeac6eb-9818-80d7-a66e-eb7134c0df2d" class="block-color-yellow_background"><strong>sda5+</strong> = always logical partitions</p></div><div style="display:contents" dir="auto"><p id="2aeac6eb-9818-8079-abde-fd3bb9c8d168" class="block-color-yellow_background">logical partitions <em>must</em> be inside the extended partition</p></div></blockquote></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b1ac6eb-9818-80b8-a30a-e56e2044860f" class="code code-wrap"><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">+-----------------------------------------------------+
+| /dev/sda1  Primary Partition                        |
++-----------------------------------------------------+
+| /dev/sda2  Primary Partition                        |
++-----------------------------------------------------+
+| /dev/sda3  Primary Partition                        |
++-----------------------------------------------------+
+| /dev/sda4  Extended Partition (container)          |
+|   +---------------------------------------------+  |
+|   | /dev/sda5  Logical Partition 1              |  |
+|   +---------------------------------------------+  |
+|   | /dev/sda6  Logical Partition 2              |  |
+|   +---------------------------------------------+  |
+|   | /dev/sda7  Logical Partition 3              |  |
+|   +---------------------------------------------+  |
+|   | /dev/sda8  Logical Partition 4              |  |
+|   +---------------------------------------------+  |
+|   | /dev/sda9  Logical Partition 5              |  |
+|   +---------------------------------------------+  |
+|   | /dev/sda10 Logical Partition 6              |  |
+|   +---------------------------------------------+  |
+|   | /dev/sda11 Logical Partition 7              |  |
+|   +---------------------------------------------+  |
++-----------------------------------------------------+</code></pre></div><div style="display:contents" dir="auto"><h2 id="2b1ac6eb-9818-8006-8976-c5b110ca6878" class="block-color-blue_background">what is LVM</h2></div><div style="display:contents" dir="auto"><p id="2aeac6eb-9818-8077-b255-f65c0d854a76" class="">LVM (Logical volume manger) is flexible disk management tool for Linux. we have three layer:</p></div><div style="display:contents" dir="auto"><div id="2b2ac6eb-9818-8072-8694-fa0f4a014ba9" class="column-list"><div style="display:contents" dir="auto"><div id="2b2ac6eb-9818-8055-811d-dc01674a2818" style="width:50%" class="column"><div style="display:contents" dir="auto"><p id="2b2ac6eb-9818-8054-9375-e8b5e15a0223" class=""><mark class="highlight-red">PV (Physical Volume):</mark> Any partition or Disk it’s Physical Volume.</p></div><div style="display:contents" dir="auto"><p id="2b2ac6eb-9818-8037-b4ed-d6b2cb26df87" class=""><mark class="highlight-red">VG (Volume Group):</mark> Group of Physicals Volumes like <mark class="highlight-blue"><code>sda1</code></mark> and <mark class="highlight-blue"><code>sda2</code></mark> and <mark class="highlight-blue"><code>sdb</code></mark> in Group1.</p></div><div style="display:contents" dir="auto"><p id="2b2ac6eb-9818-807c-9690-e5a91f708eba" class=""><mark class="highlight-red">LV (Logical Volume):</mark> Partitions can have size of all Physicals Volumes from some Volume Group and can access to it from mount point.</p></div><div style="display:contents" dir="auto"><p id="2b2ac6eb-9818-8010-8b0f-fce5d84bde79" class="">Note📛:</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b1ac6eb-9818-804d-acee-fe2756b82989" class="code code-wrap"><code class="language-JavaScript" style="white-space:pre-wrap;word-break:break-all">/dev/sda5 → PV → VG_data
+           → PV → VG_logs   (IMPOSSIBLE)</code></pre></div></div></div><div style="display:contents" dir="auto"><div id="2b2ac6eb-9818-80f9-b8df-e7aeb7baf8b4" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2b2ac6eb-9818-8039-ba9b-f603288ca86d" class="image" style="text-align:right"><a href="Born2beroot/image%201.png"><img style="width:495px" src="Born2beroot/image%201.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><blockquote id="2aeac6eb-9818-80f9-8970-fc5c2a0ac01b" class=""><strong>LUKS</strong> stands for <strong>Linux Unified Key Setup</strong>, a standard for <a href="https://www.google.com/search?client=firefox-b-d&amp;q=disk+encryption&amp;mstk=AUtExfCibdh4JKdCYKciY_RwAZitdz7WNWRuz0rUZplqyY9WttCLvKhOpNOXxFpr0L3knBqPNviILsGvPQdcGSmZHIv5rgNtO2oXf_QrNVq5P2ye-e-T0XjmjpDGCT4JPNW923kv265DA5UAvHVsF-Siq9G-_pahZNeazipmytWbb5KLP5B-nuRmaRsnB9dzOnr_2LtgnDYv4fMGjtzEEOkS20I49DagijpiD2KuS4gdeGl6XhlF1kg_ZVvUk7dR1Ed2sC0BREQyf_0LG02oWTOAi6aCh6L4ENw-Rpso1GpbsNvH3A&amp;csui=3&amp;ved=2ahUKEwiutJymwPmQAxW2caQEHbOmA4gQgK4QegQIARAE">disk encryption</a> on Linux that creates a secure, encrypted container on a block device, requires a passphrase to unlock the data for access</blockquote></div><div style="display:contents" dir="auto"><h2 id="2aeac6eb-9818-8054-8dab-f70bd897fb17" class="block-color-blue_background">Bootloader (GRUB)</h2></div><div style="display:contents" dir="auto"><p id="2b2ac6eb-9818-8048-91d4-df665725aaef" class="">It’s first program run when power on for loading kernel of system you want use.</p></div><div style="display:contents" dir="auto"><p id="2b2ac6eb-9818-802e-acef-ecab10af392d" class="">How it work?</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b1ac6eb-9818-800d-9134-e0b2dd826e94" class="code code-wrap"><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">                +---------------------------------------------------------------+
+                |                        Physical Disk (sda)                    |
+                +---------------------------------------------------------------+
+                | /dev/sda1  |   /dev/sda2 (extended)                           |
+                |  (primary) |--------------------------------------------------|
+                |            | /dev/sda5 (logical partition inside extended)    |
+                +---------------------------------------------------------------+
+                        |                         |
+                        |                         |
+                        v                         v
+                /boot partition            Encrypted partition
+                 (un-encrypted)             (LUKS encryption)
+                mounted at /boot           /dev/mapper/cryptlvm
+                                                |
+                                                |
+                                                v
+                                        +----------------------+
+                                        |  LVM Physical Volume |
+                                        +----------------------+
+                                                |
+                                                v
+                                        +----------------------+
+                                        |     Volume Group     |
+                                        |        (vg0)         |
+                                        +----------------------+
+                                                |
+                        -----------------------------------------------------
+                        |            |             |            |           |
+                        v            v             v            v           v
+
+                +------------+  +------------+  +------------+ +------------+ +------------+
+                | LV_root    |  | LV_home    |  | LV_var     | | LV_log     | | LV_tmp     |
+                +------------+  +------------+  +------------+ +------------+ +------------+
+                        |               |               |              |              |
+                        |               |               |              |              |
+                        v               v               v              v              v
+
+Mount points:           /             /home            /var         /var/log       /var/tmp
+                   (directory)     (directory)      (directory)    (directory)    (directory)</code></pre></div><div style="display:contents" dir="ltr"><figure id="2b6ac6eb-9818-8074-b89f-ea0b43bfc93c"><div class="source"><a href="Born2beroot/Untitled-2025-11-25-0913.excalidraw">Untitled-2025-11-25-0913.excalidraw</a></div></figure></div><div style="display:contents" dir="auto"><h2 id="2b2ac6eb-9818-80e3-936b-c75919502fca" class="block-color-blue_background">IP Address and Protocol and Port</h2></div><div style="display:contents" dir="auto"><div id="2b2ac6eb-9818-801f-a333-c8ee73e5fd62" class="column-list"><div style="display:contents" dir="auto"><div id="2b2ac6eb-9818-80ec-bff5-d1bca844b303" style="width:50%" class="column"><div style="display:contents" dir="auto"><h3 id="2beac6eb-9818-80f4-a574-e23615bac6cf" class="block-color-purple_background">What is IP Address?</h3></div><div style="display:contents" dir="auto"><p id="2beac6eb-9818-80ec-9c4d-fd00446ec787" class="">Unique number for every machine in network</p></div><div style="display:contents" dir="auto"><p id="2beac6eb-9818-80ff-957a-c4de82b40db4" class="">Example: <code>192.168.1.1</code></p></div><div style="display:contents" dir="auto"><h3 id="2b2ac6eb-9818-80e6-888a-ee15ef72e2b4" class="block-color-purple_background">What is MAC address?</h3></div><div style="display:contents" dir="auto"><h3 id="2b3ac6eb-9818-803c-8b80-d9fde16b179e" class="block-color-purple_background">What is Protocol?</h3></div><div style="display:contents" dir="auto"><p id="2beac6eb-9818-803f-a1ff-c4058d825c25" class="">Rules how machines communicate with each other.</p></div><div style="display:contents" dir="auto"><p id="2b6ac6eb-9818-80bc-8238-f0a0c0a742df" class="">TCP Protocol:</p></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-803c-ace5-c2156f7da494" class=""><a href="https://www.youtube.com/watch?v=F27PLin3TV0">https://www.youtube.com/watch?v=F27PLin3TV0</a></p></div><div style="display:contents" dir="auto"><h3 id="2b3ac6eb-9818-8009-9547-dc9fabb6fca7" class="block-color-purple_background">What is IP Port?</h3></div><div style="display:contents" dir="auto"><p id="2beac6eb-9818-8090-b192-ed6326a5c0f9" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="2b2ac6eb-9818-8062-a921-c5c55d136d9b" style="width:50%" class="column"><div style="display:contents" dir="ltr"><figure id="2b2ac6eb-9818-8001-b16b-fa7b6a24f7ca" class="image"><a href="Born2beroot/ddos-dns.svg"><img style="width:480px" src="Born2beroot/ddos-dns.svg"/></a></figure></div><div style="display:contents" dir="auto"><blockquote id="2b2ac6eb-9818-80b5-85e7-c58949bd5d18" class=""><mark class="highlight-blue">Host-name</mark> is unique name for device in network and <mark class="highlight-teal">Domain-name</mark> is text represent of IP address website in internet like <code>google.com</code></blockquote></div></div></div></div></div><div style="display:contents" dir="auto"><h2 id="2b5ac6eb-9818-804d-8793-f4f1f6fdb609" class="block-color-blue_background">SSH</h2></div><div style="display:contents" dir="auto"><h2 id="2bbac6eb-9818-8076-9e75-fe05be8a8869" class="block-color-blue_background">UFW</h2></div><div style="display:contents" dir="auto"><h2 id="2b3ac6eb-9818-8002-975c-c15be54cd039" class="block-color-blue_background"><strong>Sudo and Password Policy</strong></h2></div><div style="display:contents" dir="auto"><h3 id="2b3ac6eb-9818-800d-9a22-fbab9e445c5b" class="block-color-purple_background">Sudo Policy</h3></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-8059-baed-dfee7073b361" class="">Config <a href="https://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/">sudo policy</a> while in <code>/etc/sudoers.d/sudo_config</code> file.</p></div><div style="display:contents" dir="auto"><blockquote id="2b3ac6eb-9818-80b8-a659-e68ed8def333" class=""><strong>sudo</strong> is command line allow user to be superuser (aka root)</blockquote></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-8039-bc6b-c11838efe6fc" class="block-color-teal">Set limited to attempt incorrect password when use sudo:</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-80b0-bcf1-d262c2cff8bb" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Defaults passwd_tries=3</code></pre></div><div style="display:contents" dir="auto"><hr id="2b3ac6eb-9818-803d-bf2b-e2210361ea11"/></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-8007-a2f3-e775b472cc3f" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">Defaults                parameter,   parameter, ...     #affect all users on any host
+Defaults@Host_List      parameter,   parameter, ...     #affects all users on a specific host
+Defaults:User_List      parameter,   parameter, ...     #affects a specific user
+Defaults!Cmnd_List      parameter,   parameter, ...     #affects  a specific command
+Defaults&gt;Runas_List     parameter,   parameter, ...     #affects commands being run as a specific user</code></pre></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-80bc-957b-d5c6ce2e4c50" class=""><mark class="highlight-teal">Customize incorrect password massage:</mark></p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-80a8-8481-ecd19ea7c27b" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Defaults badpass_message=&quot;Nice try lol&quot;</code></pre></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-8050-91cd-d00a689c2935" class=""><mark class="highlight-teal">For save log in /var/log folder:</mark></p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-8000-996f-dbe89f896a69" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Defaults logfile=&quot;/var/log/sudo/sudo.log&quot;</code></pre></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-809c-940b-dcd941141ea6" class="">And we need change <mark class="highlight-yellow">iolog_dir</mark> from <code>/var/log/sudo-io</code> to <mark class="highlight-blue">log_input</mark> (any input display in screen from command sudo) and <mark class="highlight-blue">log_output </mark><mark class="highlight-default">(any output like use as sudo vim and type in it).</mark></p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-800e-8574-df6613412957" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Defaults  log_input, log_output</code></pre></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b9ac6eb-9818-80f5-97b1-d75dc8ada855" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Defaults iolog_dir=&quot;/var/log/sudo&quot;</code></pre></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-8055-b81d-eba5e824c44c" class=""><mark class="highlight-teal">Enable </mark><mark class="highlight-teal"><strong>TTY mode:</strong></mark></p></div><div style="display:contents" dir="auto"><blockquote id="2b3ac6eb-9818-809c-b00a-fb6888f22787" class="">TTY (<strong>teletype</strong>): is text-based interface let you interact to system from input and return output like iTerm and konsole, virtual console (aka virtual terminal, you can use it with key <mark class="highlight-gray"><code>Ctrl + Alt + F3</code></mark>) it device file <code>/dev/tty1</code> </blockquote></div><div style="display:contents" dir="auto"><div id="2b3ac6eb-9818-800f-9376-c310e166636b" class="column-list"><div style="display:contents" dir="auto"><div id="2b3ac6eb-9818-803a-a202-eb872998a902" style="width:75%" class="column"><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-8038-9ed8-ec51f4b9f820" class="code code-wrap"><code class="language-VB.Net" style="white-space:pre-wrap;word-break:break-all">Virtual Console (text interface you see on screen)
+         │
+         │  accessed via keyboard and display
+         ▼
+      tty1 (name of the first virtual terminal)
+         │
+         │  represented in the filesystem
+         ▼
+   /dev/tty1  (device file)
+         │
+         │  programs read/write text through this file
+         ▼
+     Linux kernel</code></pre></div></div></div><div style="display:contents" dir="auto"><div id="2b3ac6eb-9818-8055-940f-d2b4eee5a9eb" style="width:24.999999999999993%" class="column"><div style="display:contents" dir="ltr"><figure id="2b3ac6eb-9818-8009-867e-e233f9aeb453" class="image" style="text-align:right"><a href="Born2beroot/image%202.png"><img style="width:448.75px" src="Born2beroot/image%202.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="2b3ac6eb-9818-80ba-8d9c-d2184c718f1d"/></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-806f-9b21-d0c2ca2d379c" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Defaults requiretty</code></pre></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-80ec-bb82-e6868935734b" class="">For Disable it you need join <code>!</code>.</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-80f1-82d0-e3e29d5d283a" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Defaults !requiretty</code></pre></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-8085-8911-f9f70b6a7e8f" class=""><mark class="highlight-teal">Set security path for sudo:</mark></p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b3ac6eb-9818-8092-a447-d55e32533efa" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">Defaults secure_path=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin&quot;</code></pre></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-8024-85dc-c8fd5e90cf9b" class="">Ignore user PATH and run any program with sudo from PATH we define. purpose use command from administrator path may be not in user path and protect from script and program not safe. </p></div><div style="display:contents" dir="auto"><h3 id="2b3ac6eb-9818-80fc-a801-d1a664166b68" class="block-color-purple_background">Password Policy</h3></div><div style="display:contents" dir="auto"><p id="2b3ac6eb-9818-805f-8ea6-ee36ee6284dd" class="">Modify in file <code>/etc/login.defs</code> </p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b4ac6eb-9818-80fc-beb3-fe54a4aad042" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">PASS_MAX_DAYS 30 #Maximum days of valid password 
+PASS_MIN_DAYS 2  #Minimum days allowed between change password 
+PASS_WARN_AGE 7  #Number of days before see worning a password expires</code></pre></div><div style="display:contents" dir="auto"><p id="2b5ac6eb-9818-8072-b7b8-ded3871974fe" class="">Install password quality liber</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b5ac6eb-9818-803d-827e-eaa666a58007" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">sudo apt install libpam-pwquality</code></pre></div><div style="display:contents" dir="auto"><p id="2b5ac6eb-9818-80dc-9c57-e4a0e6be57c4" class="">Edit in file <code>/etc/pam.d/common-password</code> </p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b5ac6eb-9818-8056-9107-fefe419f5aca" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">password requisite pam_pwquality.so retry=3 minlen=10 dcredit=-1 ucredit=-1 lcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root</code></pre></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-8069-b20a-c7535906a851" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>retry</strong></mark>: how many time you can try made password with this rules</li></ul></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-8090-b1ea-f3aa01cee566" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>minlen</strong></mark>: minimal of long the password</li></ul></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-80b6-9e49-f52af028699f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>dcredit</strong></mark>: how many digit in password when use minus <mark class="highlight-purple"><code>-</code></mark> this mean minimal digit and when use plus <mark class="highlight-purple"><code>+</code></mark><mark class="highlight-purple">  </mark><mark class="highlight-default">this </mark>mean maximal</li></ul></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-804b-8597-ed1ed15d987f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>ucredit</strong></mark>: like dcredit but for uppercase</li></ul></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-805f-bea3-c7a58767b6b3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>lcredit</strong></mark>: and this for lowercase</li></ul></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-8030-8914-c50230fad6d3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>maxrepeat</strong></mark>: maximum characters can be consecutive </li></ul></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-80b9-b848-c14043d9f1fb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>reject_username</strong></mark>: cannot continue username in password</li></ul></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-80b6-b18e-e3f0acc171ca" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>difok</strong></mark>: minimal difference character between old password and new</li></ul></div><div style="display:contents" dir="auto"><ul id="2b5ac6eb-9818-80f3-9284-ee7051f754e6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>enforce_for_root</strong></mark>:  apply this rules for sudo</li></ul></div><div style="display:contents" dir="auto"><hr id="2b5ac6eb-9818-8057-bd46-d85543abb82a"/></div><div style="display:contents" dir="auto"><p id="2b5ac6eb-9818-80b5-ab54-e5ca49d206a5" class=""><mark class="highlight-gray">Syntax:</mark></p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b5ac6eb-9818-806a-98f3-c4fab2cb0044" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">module_interface	control_flag	module_name module_arguments</code></pre></div><div style="display:contents" dir="auto"><p id="2b5ac6eb-9818-8028-9bea-c958a50b9d8a" class=""><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/system-level_authentication_guide/pam_configuration_files?utm_source=chatgpt.com">https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/system-level_authentication_guide/pam_configuration_files?utm_source=chatgpt.com</a></p></div><div style="display:contents" dir="auto"><h2 id="2b6ac6eb-9818-80d1-91c1-e361276d681e" class="block-color-blue_background">How to management users and groups</h2></div><div style="display:contents" dir="auto"><p id="2bbac6eb-9818-8007-8c95-ed1ee0b0cc24" class="">new user: useradd</p></div><div style="display:contents" dir="auto"><p id="2bbac6eb-9818-8050-8070-e16e94a685d5" class="">new group: groupadd</p></div><div style="display:contents" dir="auto"><p id="2bbac6eb-9818-8015-87c7-c189ab3bfbfb" class="">sudo useradd -G groupname username</p></div><div style="display:contents" dir="auto"><p id="2bbac6eb-9818-809f-8f38-d51aadd2e645" class="">groups &lt;user&gt;<br/>    sudo hostnamectl set-hostname &lt;new-hostname&gt; <code>etc/hostname</code></p></div><div style="display:contents" dir="auto"><h2 id="2bbac6eb-9818-8049-85fe-d0333c286cf5" class="block-color-blue_background">Monitoring script</h2></div><div style="display:contents" dir="auto"><p id="2b6ac6eb-9818-80eb-a6cd-cceb924424e3" class="">create file <code>monitoring.sh</code>:</p></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b6ac6eb-9818-8050-93d5-fec05884c0a2" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">arch=$(uname -a)
+cpuf=$(nproc)
+cpuv=$(cat /proc/cpuinfo | grep processor | wc -l)
+ram=$(free -m | awk &#x27;NR==2{printf &quot;Memory: %s/%sMiB (%.2f%%)\n&quot;, $3, $2, ($3*100)/$2}&#x27;)
+disk=$(df -h / | awk &#x27;NR==2{printf &quot;Disk: %s/%s (%s) \n&quot;, $3, $2, $5}&#x27;)
+cpul=$(top -bn2 | awk &#x27;NR==8 {printf &quot;CPU Load: %s%% \n&quot;, $9}&#x27;)
+lb=$(who -b | awk &#x27;{printf &quot;Last boot: %s %s \n&quot;, $3, $4}&#x27;)
+lvmu=$(if [ $(lsblk | grep &quot;lvm&quot; | wc -l ) -gt 0 ]; then echo yes; else echo no;fi | awk &#x27;{printf &quot;LVM: %s \n&quot;, $1}&#x27;)
+tcpc=$(ss -ta | grep ESTAB | wc -l | awk &#x27;{printf &quot;Connections TCP: %s ESTABLISHED\n&quot;, $1}&#x27;)
+ulog=$(printf &quot;User log: &quot; &amp;&amp; who | awk &#x27;{print $1}&#x27; | sort -u | wc -w)
+ip=$(ip -4 addr | grep inet | awk &#x27;NR==2{printf &quot;Nerword IP: %s&quot;, $2}&#x27; | cut -d/ -f1 | tr -d &#x27;\n&#x27;)
+mac=$(ip addr | grep link/ether | awk &#x27;{printf &quot; (%s) \n&quot;, $2}&#x27;)
+cmd=$(journalctl _COMM=sudo -q | grep COMMAND | wc -l | awk &#x27;{printf &quot;Sudo: %s cmd\n&quot;, $1}&#x27;)
+
+wall &quot;
+      :::        :::::::::: ::::::::  ::::    :::
+     :+:        :+:       :+:    :+: :+:+:   :+:
+    +:+        +:+       +:+    +:+ :+:+:+  +:+
+   +#+        +#++:++#  +#+    +:+ +#+ +:+ +#+
+  +#+        +#+       +#+    +#+ +#+  +#+#+#
+ #+#        #+#       #+#    #+# #+#   #+#+#
+########## ########## ########  ###    ####
+	Architecture: $arch
+	CPU physical: $cpuf
+	vCPU: $cpuv
+	$ram
+	$disk
+	$cpul
+	$lb
+	$lvmu
+	$tcpc
+	$ulog
+	$ip $mac
+	$cmd&quot;</code></pre></div><div style="display:contents" dir="auto"><blockquote id="2b6ac6eb-9818-8058-92ae-dd4e0ba1ec08" class=""><a href="https://en.wikipedia.org/wiki/Wall_(Unix)">wall</a> command line use to write message for all users can just modify by superuser</blockquote></div><div style="display:contents" dir="auto"><div id="2b6ac6eb-9818-80a9-8fe9-d6f79f797e7c" class="column-list"><div style="display:contents" dir="auto"><div id="2b6ac6eb-9818-8077-b211-de08466fe95c" style="width:43.75%" class="column"><div style="display:contents" dir="auto"><ul id="2b6ac6eb-9818-8060-9f3f-f633dababf18" class="bulleted-list"><li style="list-style-type:disc">use command <code>uname -a</code> to print architecture and kernel version</li></ul></div><div style="display:contents" dir="auto"><ul id="2b6ac6eb-9818-8095-aac6-d26585f62c90" class="bulleted-list"><li style="list-style-type:disc"><code>nproc</code> for display number of physical processors (the cpu chip in motherboard) </li></ul></div><div style="display:contents" dir="auto"><ul id="2b6ac6eb-9818-809e-9c2a-db484e720d90" class="bulleted-list"><li style="list-style-type:disc"></li></ul></div><div style="display:contents" dir="auto"><p id="2b6ac6eb-9818-8059-8ff6-fb73bc0f113f" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="2b6ac6eb-9818-80bf-85fd-e5ba3b2a33c5" style="width:56.25%" class="column"><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b6ac6eb-9818-8097-a8c6-c53dbf61a7d6" class="code code-wrap"><code class="language-Bash" style="white-space:pre-wrap;word-break:break-all">[Physical CPU 1]  
+   ├─ Core 1 ─ Thread 1  
+   │           Thread 2  
+   ├─ Core 2 ─ Thread 1  
+   │           Thread 2  
+   ├─ Core 3 ─ Thread 1  
+   │           Thread 2  
+   └─ Core 4 ─ Thread 1  
+               Thread 2 </code></pre></div></div></div></div></div><div style="display:contents" dir="auto"><h2 id="2bbac6eb-9818-8098-b642-f914bee03ead" class="block-color-blue_background">WordPress, Lighttpd, MariaDB, and PHP</h2></div><div style="display:contents" dir="auto"><h2 id="2bbac6eb-9818-804b-b0a8-d80f228dd54a" class="block-color-blue_background">Service: phpmyadmin</h2></div><div style="display:contents" dir="auto"><p id="2bbac6eb-9818-80af-95a3-e95288262607" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
